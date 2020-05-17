@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7903885824385724215}
   - component: {fileID: -6804214797176933536}
   - component: {fileID: 4040030400264203449}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cannonBlast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1677869562806461130}
-  speed: 400
+  speed: 200
   bulletDamage: 50
   impactEffect: {fileID: 4017244518830026989, guid: 8fe0a3e1b26946d4ba7ee7c4aa39b37a,
     type: 3}

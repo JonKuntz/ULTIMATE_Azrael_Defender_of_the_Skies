@@ -14,7 +14,10 @@ public class healthBar : MonoBehaviour //https://www.youtube.com/watch?v=STrjeoy
     // Update is called once per frame
     void Update()
     {
-        startingScale.x=0.005f*( GameObject.Find("player").GetComponent<playerManager>().currentHealth);
-        transform.localScale = startingScale;
+        if (GameObject.Find("player") != null)
+        {
+            startingScale.x = 0.005f * (GameObject.Find("player").GetComponent<playerManager>().currentHealth);
+            transform.localScale = startingScale;
+        }
     }
 }

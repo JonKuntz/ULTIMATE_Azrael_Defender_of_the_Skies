@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletFly : MonoBehaviour
+public class fireballScript : MonoBehaviour
 {
+   
     // Start is called before the first frame update
     public Rigidbody2D rb;
-    public float speed = 300;
+    public float speed = 200;
     public int bulletDamage = 50;
     public GameObject impactEffect;
-    
+
     void Start()
     {
         rb.velocity = transform.right * speed;
@@ -18,7 +19,7 @@ public class bulletFly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
         if (Camera.main.WorldToViewportPoint(transform.position).x > 2)
         {
             Destroy(this.gameObject);
@@ -38,28 +39,17 @@ public class bulletFly : MonoBehaviour
 
     //}
 
-    void OnTriggerEnter2D(Collider2D enemy) //this method copied from a Brackey's Tutorial https://www.youtube.com/watch?v=wkKsl1Mfp5M
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (LayerMask.LayerToName(enemy.gameObject.layer) == "tilemap")
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "Player")
         {
+            GameObject.Find("player").GetComponent<playerManager>().currentHealth -= 10f;
             Destroy(gameObject);
+
         }
-        //enemyDeath destroyer = enemy.GetComponent<enemyDeath>();
-        //if (enemy != null)
-        //{
-        //    destroyer.TakeDamage(bulletDamage);
-        //}
-
-        if (LayerMask.LayerToName(enemy.gameObject.layer) == "Enemy")
-        {
-            enemyDeath enemyDestroyer = enemy.GetComponent<enemyDeath>();
-            enemyDestroyer.TakeDamage(bulletDamage);
-        }
-
-        //Instantiate(impactEffect, transform.position, transform.rotation);
-
-            //Destroy(gameObject);
-
     }
+
+
 }
+
 

@@ -13,6 +13,7 @@ public class fuelBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.Find("player")!=null)
         startingScale.x = 0.005f * (GameObject.Find("player").GetComponent<PlayerMovement>().fuelRemaining);
         transform.localScale = startingScale;
     }

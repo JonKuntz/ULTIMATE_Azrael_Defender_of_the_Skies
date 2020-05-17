@@ -14,15 +14,17 @@ public class destroyDoor : MonoBehaviour
     void Update()
     {
         {
-            int x = GameObject.Find("player").GetComponent<playerManager>().currentScore;
-            Debug.Log("score is " + x);
-
-            if (x == 20)
+            if (GameObject.Find("player") != null)
             {
-                Destroy(gameObject);
+                int x = GameObject.Find("player").GetComponent<playerManager>().currentScore;
+                //Debug.Log("score is " + x);
 
+                if (x == 20)
+                {
+                    Destroy(gameObject);
+
+                }
             }
-
         }
     }
 

@@ -12,21 +12,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 runVector;
     public float jetpackSpeed = 40f;
     public float runSpeed = 0.5f;
-    public float gravitySimulator = 1f;
+   
     public float boostAmount = 10f;
     private Vector3 gravity;
     public float gravityAmount;
 
-    public GameObject healthBoxOne;
-    public GameObject healthBoxTwo;
-    public GameObject healthBoxThree;
-    public GameObject healthBoxFour;
-    public GameObject healthBoxFive;
-    public GameObject healthBoxSix;
-    public GameObject healthBoxSeven;
-    public GameObject healthBoxEight;
-    public GameObject healthBoxNine;
-    public GameObject healthBoxTen;
 
 
 
@@ -71,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(fuelRemaining);
+        //Debug.Log(fuelRemaining);
 
         if (fuelRemaining <0)
             fuelRemaining = 0;
@@ -141,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
                 if (fuelRemaining>=0)
                 {
                     Invoke("fuelTankReplenishPassive", 0.05f);
-                    Debug.Log("falling");
+                    //Debug.Log("falling");
                     animator.SetFloat("isRunning", 0f);
                 }
             }
@@ -283,7 +273,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Debug.Log("fire CANNONS");
+            //Debug.Log("fire CANNONS");
             GameObject.Instantiate(cannonBlast, transform);
         }
     }

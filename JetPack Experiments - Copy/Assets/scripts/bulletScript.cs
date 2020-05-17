@@ -25,6 +25,6 @@ public class bulletScript : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
-        Debug.Log("shoot has succeeded");
+        //Debug.Log("shoot has succeeded");
     }
 }
