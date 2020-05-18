@@ -8,31 +8,27 @@ public class enemyDeath : MonoBehaviour
 
     public int health = 100;
     public Transform explosionPlace;
+    private bool killCounted=false;
 
     public AudioSource explosionSound; 
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
     public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
-        if (health <= 0)
+        if (health == 0)
         {
             explosionSound.Play();
+            health -= 1;
             Death();
         }
     }
 
     void Death()
     {
-        
+        GameObject.Find("GameMaster").GetComponent<gameMaster>().killCount += 1;
         Destroy(gameObject, 0.2f);
     }
 }

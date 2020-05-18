@@ -7,6 +7,7 @@ public class gameMaster : MonoBehaviour
 {
     private GameObject doorToDestroy;
     // Start is called before the first frame update
+    public int killCount = 0;
     void Start()
     {
         

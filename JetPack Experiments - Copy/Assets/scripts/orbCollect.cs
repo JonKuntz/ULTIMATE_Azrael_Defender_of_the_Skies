@@ -12,6 +12,7 @@ public class orbCollect : MonoBehaviour
         {
             GameObject.Find("player").GetComponent<playerManager>().currentScore += 10;
             
+            
             Destroy(gameObject);
 
         }

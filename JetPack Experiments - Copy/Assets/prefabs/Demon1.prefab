@@ -70,13 +70,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5452327047645025642}
   - component: {fileID: 5452327047645025641}
-  - component: {fileID: 5452327047645025643}
   - component: {fileID: 5452327047645025644}
   - component: {fileID: 4779200774420300021}
   - component: {fileID: 1003839183893158629}
   - component: {fileID: 3667084631357840829}
   - component: {fileID: 6888395585720392121}
   - component: {fileID: 3410678083438855996}
+  - component: {fileID: 5253052129568338032}
   m_Layer: 9
   m_Name: Demon1
   m_TagString: Untagged
@@ -150,24 +150,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5452327047645025643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5452327047645025640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97a94bcafee16974f97e37989dfcff0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypointMarkers:
-  - {fileID: 0}
-  - {fileID: 0}
-  speed: 6
-  rb: {fileID: 5452327047645025644}
-  enemyDamage: 10
 --- !u!50 &5452327047645025644
 Rigidbody2D:
   serializedVersion: 4
@@ -241,7 +223,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 488335d7f57e4e34f8c90623f6b14f5c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -363,3 +345,22 @@ MonoBehaviour:
   fireballPrefab2: {fileID: 8948143780542953689, guid: 1c3ec6704b6ba0a4e94cbac34b203dad,
     type: 3}
   fireballFirePoint: {fileID: 1145222894147420859}
+--- !u!114 &5253052129568338032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452327047645025640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88628f1a605912c43bad9844d2c6708f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypointMarkers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 2
+  rb: {fileID: 0}
+  enemyDamage: 10

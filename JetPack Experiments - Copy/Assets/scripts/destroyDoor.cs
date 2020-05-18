@@ -19,7 +19,7 @@ public class destroyDoor : MonoBehaviour
                 int x = GameObject.Find("player").GetComponent<playerManager>().currentScore;
                 //Debug.Log("score is " + x);
 
-                if (x == 20)
+                if (x == 40)
                 {
                     Destroy(gameObject);
 
