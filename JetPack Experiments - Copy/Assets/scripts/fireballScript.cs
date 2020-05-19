@@ -41,6 +41,12 @@ public class fireballScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "tilemap")
+        {
+            Destroy(gameObject);
+            Debug.Log("fireball hit tilemap");
+        }
+
         if (LayerMask.LayerToName(collision.gameObject.layer) == "Player")
         {
             GameObject.Find("player").GetComponent<playerManager>().currentHealth -= 10f;

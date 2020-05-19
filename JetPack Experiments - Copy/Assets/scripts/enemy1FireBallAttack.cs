@@ -8,7 +8,7 @@ public class enemy1FireBallAttack : MonoBehaviour
 
     public bool canShoot = true;
     public GameObject fireballPrefab;
-    public GameObject fireballPrefab2;
+    //public GameObject fireballPrefab2;
     public Transform fireballFirePoint;
 
     // Update is called once per frame
@@ -17,7 +17,7 @@ public class enemy1FireBallAttack : MonoBehaviour
         if (canShoot)
         {
             Instantiate(fireballPrefab, fireballFirePoint.position, fireballFirePoint.rotation);
-            Instantiate(fireballPrefab2, fireballFirePoint.position, fireballFirePoint.rotation);
+            //Instantiate(fireballPrefab2, fireballFirePoint.position, fireballFirePoint.rotation);
             StartCoroutine(Reload());
             canShoot = false;
         }

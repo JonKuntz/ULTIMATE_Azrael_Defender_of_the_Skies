@@ -19,6 +19,8 @@ public class verticalMovementEnemy : MonoBehaviour
     public Rigidbody2D rb;
     public int enemyDamage = 10;
 
+    public AudioSource playerCollision;
+
 
 
     void Start()
@@ -40,7 +42,8 @@ public class verticalMovementEnemy : MonoBehaviour
         if (LayerMask.LayerToName(collision.gameObject.layer) == "Player")
         {
             GameObject.Find("player").GetComponent<playerManager>().currentHealth -= 10f;
-            //Destroy(gameObject);
+            playerCollision.Play();
+            Destroy(gameObject,0.1f);
 
         }
     }
